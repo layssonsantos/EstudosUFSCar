@@ -1,0 +1,51 @@
+Algoritmo "Exercício de CAP - Máquina registradora"
+//
+//
+// Descrição   : Algoritmo que recebe valor de código de um produto e imprime a quantidade de produtos comprados e o pagamento em R$:
+// Autor(a)    : Laysson Santos
+// Data atual  : 22/6/2022
+Var
+   // Seção de Declarações das variáveis
+   codigo: inteiro;
+   qtd: real;
+   soma: real;
+Inicio
+
+   soma <- 0
+   // Recebe o código, soma os valores dos produtos e a quantidade:
+   repita // Irá repetir até...
+      escreval("DIgite o código do produto: ")
+      leia(codigo)
+      escolha codigo
+      caso 1
+         soma <- soma + 0.50
+         escreval("Este é o produto 1")
+         escreval("Essa compra vale R$0,50")
+         qtd <- qtd + 1
+      caso 2
+         soma <- soma + 1.00
+         escreval("Este é o produto 2")
+         escreval("Essa compra vale R$1,00")
+         qtd <- qtd + 1
+      caso 3
+         soma <- soma + 4.00
+         escreval("Este é o produto 3")
+         escreval("Essa compra vale R$4,00")
+         qtd <- qtd + 1
+      caso 4
+         soma <- soma + 7.00
+         escreval("Este é o produto 4")
+         escreval("Essa compra vale R$7,00")
+         qtd <- qtd + 1
+      caso 5
+         soma <- soma + 8.00
+         escreval("Este é o produto 5")
+         escreval("Essa compra vale R$8,00")
+         qtd <- qtd + 1
+      fimescolha
+   ate (codigo = 0)// que o valor do código seja = 0
+   escreval("A quantidade de compras é de: ",qtd:1:0," e o pagamento é de:R$",soma:4:2)
+
+
+
+Fimalgoritmo
