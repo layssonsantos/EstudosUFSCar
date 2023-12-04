@@ -1,0 +1,67 @@
+@startuml 1
+
+abstract ObraDeArte {
+    +ObraDeArte(string, string, string, int, string)
+    +~ObraDeArte()
+    +int {abstract} getArte()
+    +void {abstract} imprimeFicha()
+    +void imprime()
+    +{static} bool comparaTitulo()
+    +{static} bool comparaAno()
+    -titulo : string
+    -artista : string
+    -material : string
+    -anoCriacao : int
+    -tecnica : string
+}
+abstract ObraDeArte
+note left: Métodos getters/setters incluídos
+
+class Escultura {
+    +Escultura(string, string , string, int, string, double, string, string)
+    +~Escultura()
+    +int getArte() 
+    +void imprimeFicha()
+    -altura : double
+    -tipo : string
+    -epoca : string
+}
+ObraDeArte <|-- Escultura
+class Escultura
+note left: Métodos getters/setters incluídos
+
+class Pintura {
+    +Pintura(string, string, string, int, string, string, string)
+    +~Pintura()
+    +int getArte() 
+    +void imprimeFicha()
+    -cor : string
+    -classificacao : string
+}
+ObraDeArte <|-- Pintura
+class Pintura
+note top of Pintura: Métodos getters/setters incluídos
+
+class Museu {
+    +Museu(string fileName)
+    +~Museu()
+    +bool adiciona(int)
+    +void imprime(bool sorted)
+    +void imprime(string)
+    +bool remove(string)
+    +bool removeTodos()
+    +bool atualizaMaterial(string)
+    +bool atualizaTecnica(string)
+    +{static} char opcao()
+    -escrever() : void
+    -salvar() : void
+    -encontrarObra(string) : int
+    -fileName : string
+    -obras : vector <ObraDeArte *>
+}
+
+Museu "1" --> "0..*" ObraDeArte
+class Museu
+note right: Métodos getters/setters incluídos
+
+@enduml
